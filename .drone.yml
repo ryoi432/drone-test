@@ -1,10 +1,30 @@
 kind: pipeline
 type: docker
-name: default
+name: dev
 
 steps:
-- name: greeting
+- name: echo
   image: alpine
   commands:
   - echo hello
-  - echo world
+  - echo dev
+
+trigger:
+  branch:
+  - dev
+
+---
+kind: pipeline
+type: docker
+name: stg
+
+steps:
+- name: echo
+  image: alpine
+  commands:
+  - echo hello
+  - echo stg
+
+trigger:
+  branch:
+  - stg
