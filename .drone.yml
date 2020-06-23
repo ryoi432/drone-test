@@ -8,6 +8,11 @@ steps:
   commands:
   - echo hello
   - echo dev
+- name: echo2
+  image: alpine
+  commands:
+  - echo hello
+  - echo neodev
 
 trigger:
   branch:
